@@ -1,13 +1,18 @@
 import { useRouter } from 'next/router'
 
-const PeliculaDetail =  () => {
+import PeliculaDetails from '../../components/peliculas/PeliculaDetails';
+import { DUMMY_MOVIES } from '../../constants/DUMMY_MOVIES';
+
+const PeliculaDetail = () => {
 
     const router = useRouter();
     const id = router.query.id
-
+    const pelicula = DUMMY_MOVIES.find(movie => movie.id === id)
     // podemos mandar un request con el id provisto, por ejemplo :D
-
-    return <h1>Esta es el detail de la pelicula, y su id es: {id} </h1>
+    if(pelicula) {
+        return <PeliculaDetails pelicula={pelicula}/>
+    }
+    return null;
 }
 
 export default PeliculaDetail
