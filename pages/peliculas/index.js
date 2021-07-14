@@ -19,25 +19,25 @@ const Peliculas = props => {
     </>
 }
 
-export async function getServerSideProps(context) {
+// export async function getServerSideProps(context) {
 
-    const req = context.req
-    const res = context.res
+//     const req = context.req
+//     const res = context.res
 
-    return {
-        props: {
-            peliculas: DUMMY_MOVIES
-        }
-    }
-}
-
-// export async function getStaticProps() {
 //     return {
 //         props: {
-//             peliculas: DUMMY_MOVIES,
-//             revalidate: 10
+//             peliculas: DUMMY_MOVIES
 //         }
 //     }
 // }
+
+export async function getStaticProps() {
+    return {
+        props: {
+            peliculas: DUMMY_MOVIES,
+            revalidate: 10
+        }
+    }
+}
 
 export default Peliculas

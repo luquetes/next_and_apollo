@@ -14,6 +14,12 @@ function MainNavigation() {
           <li>
             <Link href='/peliculas/nueva'>Nueva Pelicula</Link>
           </li>
+          <li>
+            <Link href='/countries-static'>GraphQL Paises (Static)</Link>
+          </li>
+          <li>
+            <Link href='/countries-ssr'>GraphQL Paises (SSR)</Link>
+          </li>
         </ul>
       </nav>
     </header>
